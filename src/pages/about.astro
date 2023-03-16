@@ -1,0 +1,35 @@
+---
+const pageTitle: string = 'About page';
+
+interface Personal {
+  firstName: string;
+  lastName: string;
+  country: string;
+  hobbies: string[];
+}
+
+const personal: Personal = {
+  firstName: 'sample',
+  lastName: 'taro',
+  country: 'japan',
+  hobbies: ['soccer', 'react'],
+};
+
+const one: number = 1;
+const flag: boolean = false;
+---
+
+<body>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="blog">Blog</a>
+  <h1>{pageTitle}</h1>
+  <p>{personal.firstName}</p>
+  <p>{personal.lastName}</p>
+  <p>{personal.country}</p>
+  <ol>
+    {personal.hobbies.map((hobby) => <li>{hobby}</li>)}
+  </ol>
+  {one === 1 ? <p>Yes</p> : <p>No</p>}
+  {flag && <p>true</p>}
+</body>
