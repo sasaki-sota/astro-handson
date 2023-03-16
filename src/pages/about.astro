@@ -17,6 +17,7 @@ const personal: Personal = {
 
 const one: number = 1;
 const flag: boolean = false;
+const countryColor: string = 'navy';
 ---
 
 <body>
@@ -24,11 +25,24 @@ const flag: boolean = false;
   <a href="/about">About</a>
   <a href="blog">Blog</a>
   <h1>{pageTitle}</h1>
+  <style define:vars={{ countryColor }}>
+    h1 {
+      color: aquamarine;
+      font-size: 4rem;
+    }
+    .list {
+      /* 直接 - direct */
+      /* color: cadetblue; */
+      /* 定数 - const */
+      color: var(--countryColor);
+      font-weight: bold;
+    }
+  </style>
   <p>{personal.firstName}</p>
   <p>{personal.lastName}</p>
   <p>{personal.country}</p>
   <ol>
-    {personal.hobbies.map((hobby) => <li>{hobby}</li>)}
+    {personal.hobbies.map((hobby) => <li class="list">{hobby}</li>)}
   </ol>
   {one === 1 ? <p>Yes</p> : <p>No</p>}
   {flag && <p>true</p>}
