@@ -1,0 +1,8 @@
+---
+interface SocialProps {
+  [key: string]: string;
+}
+const { platform, link }: SocialProps = Astro.props;
+---
+
+<a href={`${link}`}>{platform}</a>

@@ -1,0 +1,17 @@
+---
+import Social from './Social.astro';
+
+const platform: string = 'github';
+const username: string = 'sasaki-sota';
+const projectName: string = 'astro-handson';
+---
+
+<footer>
+  <p>
+    My creation Project by: <a
+      href={`"https://www.${platform}.com/${username}/${projectName}"`}
+      >{projectName}</a
+    >
+  </p>
+  <Social platform="instagram" link="https://www.instagram.com/" />
+</footer>
